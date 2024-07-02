@@ -1,6 +1,7 @@
-from typing import List
+from typing import List, Dict
 class L_sysA:
-    def __init__(self, vars, const, axiom, rules):
+    def __init__(self, name, vars, const, axiom, rules):
+        self.name = name
         self.vars: List[str] = vars
         self.consts: List[str] = const
         self.axiom: str = axiom
@@ -18,7 +19,7 @@ class L_sysA:
         self.string = self.axiom
         self.gen = 0
 
-class FractalTree(L_sysA):
+class L_sysB(L_sysA):
     def crawl(self):
         new_string = []
         for char in self.string:
